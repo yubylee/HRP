@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignUp</title>
+  <link rel="stylesheet" type="text/css" href="signup.css">
+</head>
+<body>
+  <form>
+    <h1>회원가입</h1>
+    <div>
+      <label for="username">사용자명</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+      <label for="email">이메일</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="password">비밀번호</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+      <label for="confirm-password">비밀번호 확인</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+    </div>
+    <div>
+      <label for="postno">우편번호</label><br>
+      <input
+        class="sign-input"
+        id="postno"
+        type="text"
+        name="postno"
+        readonly
+      />
+      <input
+        type="button"
+        id="find-button"
+        onclick="sample6_execDaumPostcode()"
+        value="우편번호 찾기"
+      />
+    </div>
+    <div>
+      <label for="basicaddress">기본주소</label>
+      <input
+        id="basicaddress"
+        type="text"
+        name="basicaddress"
+        readonly
+      />
+    </div>
+    <div>
+      <label for="detailaddress">상세주소</label>
+      <input
+        id="detailaddress"
+        type="text"
+        name="detailaddress"
+      />
+    </div>
+    <div>
+      <label for="birthdate">생년월일</label><br>
+      <input type="date" id="birthdate" name="birthdate" required>
+    </div>
+    <div>
+      <label for="position">직급</label><br>
+      <select id="position" name="position" required>
+        <option value="" disabled selected>선택하세요</option>
+        <option value="">이사</option>
+        <option value="">팀장</option>
+        <option value="">부장</option>
+        <option value="">과장</option>
+        <option value="">대리</option>
+        <option value="">사원</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit" id="signup-btn">가입하기</button>
+    </div>
+  </form>
+  <script src="signup.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</body>
+</html>
