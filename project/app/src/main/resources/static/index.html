@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인사시스템</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <header>
+    <h1>인사 시스템</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#">홈</a></li>
+      <li><a href="#">직원 목록</a></li>
+      <li><a href="#">새로운 직원 추가</a></li>
+      <li><a href="#">휴가 관리</a></li>
+      <li><a href="#">통계</a></li>
+    </ul>
+  </nav>
+  
+  <section>
+    <h2>환영합니다!</h2>
+    <p id="currentTime"></p>
+    <button id="attendanceButton" onclick="markAttendance()">출석</button>
+    <p id="attendanceTime"></p>
+    <p>일단 출석이랑 휴가관리 정도만 추가하고 전태산 새끼 오면 다시회의</p>
+  </section>
+  
+  <footer>
+    <p>&copy; 2023 인사 시스템</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
