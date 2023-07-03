@@ -17,13 +17,13 @@ function markAttendance() {
   var button = document.getElementById("attendanceButton");
   var timeElement = document.getElementById("attendanceTime");
 
-  if (button.textContent === "출석") {
+  if (button.textContent === "출근") {
     currentTime = new Date();
     hours = currentTime.getHours();
     minutes = currentTime.getMinutes();
 
     var formattedTime = hours + "시 " + minutes + "분";
-    timeElement.textContent = "출석시간: " + formattedTime;
+    timeElement.textContent = "출근시간: " + formattedTime;
 
     button.textContent = "퇴근";
   } else {
@@ -34,7 +34,7 @@ function markAttendance() {
     var formattedTime = hours + "시 " + minutes + "분";
     timeElement.textContent = "퇴근시간: " + formattedTime;
 
-    button.textContent = "출석";
+    button.textContent = "출근";
   }
 }
 

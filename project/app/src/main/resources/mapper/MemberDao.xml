@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="project.dao.MemberDao">
+    <resultMap type="Member" id="memberMap">
+      <id column="member_id" property="no" />
+      <result column="name" property="name" />
+      <result column="tel" property="tel" />
+      <result column="email" property="email" />
+      <result column="post_no" property="postNo" />
+      <result column="basic_address" property="basicAddress" />
+      <result column="detail_address" property="detailAddress" />
+      <result column="birth" property="birth" />
+      <result column="created_date" property="createDate" />
+    </resultMap>
+    
+    <insert id="insert" parameterType="member"
+            useGeneratedKeys="true" keyProperty="no" keyColumn="member_id">
+    insert into hrp_member(
+    name,
+    tel,
+    email,
+    password,
+    position,
+    post_no,
+    basic_address,
+    detail_address,
+    birth)
+    values(#{name}, #{tel}, #{email}, #sha2(#{password}, 256), #{position},
+     #{postNo}, #{basicAddress}, #{detailAddress}, #{birth})        
+    </insert>
+  </mapper>
