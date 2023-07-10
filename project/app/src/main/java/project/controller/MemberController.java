@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import project.service.MemberService;
@@ -20,8 +21,9 @@ public class MemberController {
   @Autowired private MemberService memberService;
 
   @PostMapping
-  public Object insert(Member member) {
+  public Object insert(@RequestBody Member member) {
     memberService.add(member);
+    System.out.println("받음");
     return new RestResult()
         .setStatus(RestStatus.SUCCESS);
 

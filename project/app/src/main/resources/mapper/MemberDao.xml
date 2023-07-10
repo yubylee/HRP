@@ -27,7 +27,7 @@
     basic_address,
     detail_address,
     birth)
-    values(#{name}, #{tel}, #{email}, #sha2(#{password}, 256), #{position},
+    values(#{name}, #{tel}, #{email}, sha2(#{password}, 256), #{position},
      #{postNo}, #{basicAddress}, #{detailAddress}, #{birth})        
     </insert>
   </mapper>

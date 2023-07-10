@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
   <title>SignUp</title>
   <link rel="stylesheet" type="text/css" href="signup.css">
 </head>
 <body>
-  <form>
+  <form id="member-form" action="update" method="post">
     <h1>회원가입</h1>
     <div>
       <label for="username">사용자명</label>
@@ -26,12 +29,16 @@
       <input type="password" id="confirm-password" name="confirm-password" required>
     </div>
     <div>
+      <label for="tel">전화번호</label>
+      <input type="tel" id="tel" name="tel" maxlength="13" oninput="hypenTel(this)" placeholder="휴대폰 번호(숫자를 입력하세요.)" required>
+    </div>
+    <div>
       <label for="postno">우편번호</label><br>
       <input
         class="sign-input"
         id="postno"
         type="text"
-        name="postno"
+        name="postNo"
         readonly
       />
       <input
@@ -46,7 +53,7 @@
       <input
         id="basicaddress"
         type="text"
-        name="basicaddress"
+        name="basicAddress"
         readonly
       />
     </div>
@@ -55,7 +62,7 @@
       <input
         id="detailaddress"
         type="text"
-        name="detailaddress"
+        name="detailAddress"
       />
     </div>
     <div>
@@ -66,12 +73,12 @@
       <label for="position">직급</label><br>
       <select id="position" name="position" required>
         <option value="" disabled selected>선택하세요</option>
-        <option value="">이사</option>
-        <option value="">팀장</option>
-        <option value="">부장</option>
-        <option value="">과장</option>
-        <option value="">대리</option>
-        <option value="">사원</option>
+        <option value="이사">이사</option>
+        <option value="팀장">팀장</option>
+        <option value="부장">부장</option>
+        <option value="과장">과장</option>
+        <option value="대리">대리</option>
+        <option value="사원">사원</option>
       </select>
     </div>
     <div>

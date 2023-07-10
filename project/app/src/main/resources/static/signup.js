@@ -1,3 +1,4 @@
+// --------------------------------------- 다음 주소찾기 ---------------------------------------
 function sample6_execDaumPostcode() {
   new daum.Postcode({
     oncomplete: function (data) {
@@ -49,15 +50,28 @@ function sample6_execDaumPostcode() {
   }).open();
 }
 
+// --------------------------------------- 전화번호 자동 하이픈 ---------------------------------------
+const hypenTel = (target) => {
+  target.value = target.value
+    .replace(/[^0-9]/g, "")
+    .replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);
+};
 
-
+// --------------------------------------- 회원가입 fetch ---------------------------------------
 document.querySelector("#signup-btn").onclick = () => {
   const form = document.querySelector("#member-form");
   const formData = new FormData(form);
 
   let json = JSON.stringify(Object.fromEntries(formData));
 
-  fetch("../members", {
+  if (
+    document.querySelector("#confirm-password").value !=
+    document.querySelector("#password").value
+  ) {
+    return;
+  }
+  
+  fetch("members", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -70,7 +84,6 @@ document.querySelector("#signup-btn").onclick = () => {
     .then((result) => {
       if (result.status == "success") {
         alert("가입 완료!");
-        location.href = "/sandle/index.html";
       } else {
         alert("입력 실패!");
         console.log(result.data);
